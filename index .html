@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <title>JAKUB GAMES - SYSTEM</title>
+    <style>
+        body { background-color: #050505; color: #00ff41; font-family: 'Courier New', monospace; text-align: center; margin: 0; overflow: hidden; }
+        @keyframes explosion { 0% { transform: scale(0.1); opacity: 0; filter: brightness(10); } 50% { transform: scale(1.2); opacity: 1; filter: brightness(2); } 100% { transform: scale(1); opacity: 1; filter: brightness(1); } }
+        @keyframes shake { 0% { transform: translate(1px, 1px); } 20% { transform: translate(-3px, -2px); } 100% { transform: translate(0, 0); } }
+        .smoke-bg { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: radial-gradient(circle, #444, #111, #000); z-index: 10001; display: flex; justify-content: center; align-items: center; animation: explosion 0.8s ease-out; }
+        .main-container { border: 2px solid #00ff41; padding: 30px; margin-top: 50px; display: inline-block; background: #000; box-shadow: 0 0 20px #00ff41; }
+        .btn-action { background: #00ff41; color: black; padding: 15px 30px; font-weight: bold; border: none; cursor: pointer; margin-top: 20px; font-size: 1.2em; }
+        input { background: #111; border: 1px solid #00ff41; color: #00ff41; padding: 10px; margin: 10px; text-align: center; }
+    </style>
+</head>
+<body>
+    <div id="explosion-screen" class="smoke-bg">
+        <div style="animation: shake 0.5s infinite;">
+            <h1 style="font-size: 4em; color: #ff4500; text-shadow: 0 0 20px red;">💥 BOOM! 💥</h1>
+            <p style="font-size: 1.5em; color: #00ff41;">Hej! Zaloguj się, ta gra jest bardzo super!</p>
+            <button class="btn-action" onclick="document.getElementById('explosion-screen').style.display='none'">WCHODZĘ DO GRY</button>
+        </div>
+    </div>
+    <div class="main-container">
+        <h1>JAKUB GAMES OS</h1>
+        <p>[ OCZEKIWANIE NA ADMINA ]</p>
+        <input type="password" id="pass1" placeholder="KOD 1212">
+        <br>
+        <button class="btn-action" onclick="startSecurity()">ZALOGUJ</button>
+    </div>
+    <script>
+        function startSecurity() {
+            if(document.getElementById('pass1').value === "1212") {
+                alert("Kod poprawny! Rozpoczynam skanowanie głosu...");
+                window.SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
+                const rec = new SpeechRecognition();
+                rec.lang = 'pl-PL';
+                rec.start();
+                alert("Mów teraz!");
+                rec.onresult = function(e) {
+                    let g = e.results[0][0].transcript.toLowerCase();
+                    if(g.includes("jakub") || g.includes("otwórz")) {
+                        let p2 = prompt("OSTATNIE HASŁO (4BBwf):");
+                        if(p2 === "4BBwf") { alert("WITAJ JAKUB! System odblokowany."); document.body.style.background="#001a33"; }
+                    }
+                };
+            }
+        }
+    </script>
+</body>
+</html>
