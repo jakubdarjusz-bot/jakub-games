@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <title>Jakub Games - Oficjalny Launcher</title>
+    <style>
+        body { background-color: #0d0d0d; color: #00ff00; font-family: 'Courier New', Courier, monospace; text-align: center; padding: 20px; }
+        .panel { border: 2px solid #00ff00; padding: 20px; border-radius: 10px; background: #1a1a1a; display: inline-block; box-shadow: 0 0 15px #00ff00; }
+        .btn-install { background: #00ff00; color: black; padding: 20px 40px; font-size: 20px; font-weight: bold; text-decoration: none; border-radius: 5px; display: block; margin: 10px; transition: 0.3s; }
+        .btn-install:hover { background: #ffffff; box-shadow: 0 0 20px #ffffff; }
+        .btn-mod { background: #2980b9; color: white; padding: 10px 20px; text-decoration: none; border-radius: 5px; display: inline-block; margin: 5px; }
+        .admin-section { margin-top: 30px; border-top: 1px dashed #555; padding-top: 20px; }
+    </style>
+</head>
+<body>
+    <div class="panel">
+        <h1>[ JAKUB GAMES OS ]</h1>
+        <p>Wykryto użytkownika: <b>Gość</b></p>
+        
+        <a href="#" class="btn-install" onclick="alert('Inicjowanie pobierania Jakub-Games-Installer.exe...')">⬇️ INSTALUJ GRĘ (Słonki & Windy)</a>
+        
+        <div class="mods">
+            <a href="#" class="btn-mod" onclick="alert('Łączenie z serwerem modów...')">POBIERZ MODY</a>
+            <a href="#" class="btn-mod" onclick="alert('Sprawdzanie aktualizacji nocnych...')">SYNCHRONIZACJA NOCNA</a>
+        </div>
+
+        <div class="admin-section">
+            <p>PANEL ADMINISTRATORA</p>
+            <button onclick="let code = prompt('Podaj kod dostępu:'); if(code=='1212'){alert('WITAJ JAKUB! System odblokowany.');}else{alert('BŁĄD: BRAK LICENCJI');}">ODBLOKUJ SYSTEM 1 2 1 2</button>
+        </div>
+    </div>
+
+    <p style="color: #555; margin-top: 20px;">Wersja systemu: 1.0.2 | Twórca: Jakub</p>
+</body>
+</html>
