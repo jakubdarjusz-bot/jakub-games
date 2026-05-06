@@ -1,0 +1,7 @@
+<div id="welcome-popup" class="popup-overlay">
+    <div class="popup-box">
+        <h2 style="color: #00ff41;">HEJ! ZALOGUJ SIĘ!</h2>
+        <p style="color: white;">Ta gra jest bardzo super. Słonki i windy czekają na Ciebie!</p>
+        <button class="popup-btn" onclick="closePopup()">WCHODZĘ W TO!</button>
+    </div>
+</div>
