@@ -1,0 +1,5 @@
+function closePopup() {
+    document.getElementById('welcome-popup').style.display = 'none';
+    // Po zamknięciu może zagrać krótki dźwięk startu!
+    console.log("Użytkownik wszedł do gry.");
+}
